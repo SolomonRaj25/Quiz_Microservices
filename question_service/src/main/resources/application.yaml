@@ -1,0 +1,30 @@
+server:
+  port: 2203
+
+spring:
+  application:
+    name: question
+  datasource:
+    url: jdbc:postgresql://localhost:5432/QuestionDB
+    username: postgres
+    password: Madhu#223
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+#  cloud:
+#    discovery:
+#      enabled: true
+#    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
+#          lower-case-service-id: true
+
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka/
+#  instance:
+#    hostname: localhost
+#    prefer-ip-address: true

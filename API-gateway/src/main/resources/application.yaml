@@ -1,0 +1,27 @@
+server:
+  port: 2522
+spring:
+  application:
+    name: API-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: question
+          uri: lb://question
+          predicates:
+            - Path=/question/**
+        - id: quiz
+          uri: lb://quiz
+          predicates:
+            - Path=/quiz/**
+      discovery:
+        locator:
+          enabled: true
+#          lower-case-service-id: true
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka/
+#  instance:
+#    hostname: localhost
+#    prefer-ip-address: true
